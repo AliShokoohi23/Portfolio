@@ -2,7 +2,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import Particle from "../Particle";
 import ProjectCard from "./ProjectCards";
 
-// Import images for each project (ensure these images exist in your Assets folder)
 import computerSecurityImg from "../../Assets/computerSecurity.png";
 import tradingAlgorithmImg from "../../Assets/tradingAlgorithm.png";
 import reactivitiesImg from "../../Assets/reactivities.png";
