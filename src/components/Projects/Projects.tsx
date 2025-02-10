@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCards";
 
 import computerSecurityImg from "../../Assets/computerSecurity.png";
 import tradingAlgorithmImg from "../../Assets/tradingAlgorithm.png";
-import reactivitiesImg from "../../Assets/reactivities.png";
+import reactivitiesImg from "../../Assets/Reactivities.png";
 import dslImg from "../../Assets/dsl.png";
 import expensesManagementImg from "../../Assets/expensesManagement.png";
 import GPT3 from "../../Assets/GPT-3.png";
