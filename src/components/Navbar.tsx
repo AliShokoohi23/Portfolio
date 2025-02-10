@@ -93,14 +93,14 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link href="https://alishokoohi.vercel.app/" rel="noreferrer">
+              <Nav.Link href="/" rel="noreferrer">
                 <ImBlog style={{ marginBottom: "2px" }} /> Blogs
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/ali-shokoohi23/Portfolio"
+                href="https://github.com/alishokoohi23/Portfolio"
                 target="_blank"
                 className="fork-btn-inner"
               >
