@@ -1,4 +1,3 @@
-import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
@@ -12,67 +11,53 @@ import {
   SiTypescript,
   SiArduino,
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiDocker,
-  SiAdobephotoshop,
-  SiProteus
+  SiFigma,
+  SiFlutter,
 } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
-
 import { TbBrandCSharp } from "react-icons/tb";
+import { motion } from "framer-motion";
+
+const techItems = [
+  { icon: <TbBrandCSharp />, name: "C#" },
+  { icon: <SiDotnet />, name: ".NET" },
+  { icon: <DiPython />, name: "Python" },
+  { icon: <DiJavascript1 />, name: "JavaScript" },
+  { icon: <SiTypescript />, name: "TypeScript" },
+  { icon: <DiReact />, name: "React" },
+  { icon: <SiFlutter />, name: "Flutter" },
+  { icon: <CgCPlusPlus />, name: "C++" },
+  { icon: <DiGit />, name: "Git" },
+  { icon: <SiSqlite />, name: "SQLite" },
+  { icon: <BiLogoPostgresql />, name: "PostgreSQL" },
+  { icon: <SiHtml5 />, name: "HTML5" },
+  { icon: <SiCss />, name: "CSS3" },
+  { icon: <SiDocker />, name: "Docker" },
+  { icon: <SiArduino />, name: "Arduino" },
+  { icon: <SiFigma />, name: "Figma" },
+];
 
 function Techstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <TbBrandCSharp />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiDotnet />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJavascript1 />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiTypescript />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <CgCPlusPlus />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiSqlite />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiArduino />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <BiLogoPostgresql />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiHtml5 />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiCss3  />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiDocker  />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiAdobephotoshop  />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiProteus  />
-      </Col>
-    </Row>
+    <div className="tech-grid">
+      {techItems.map((item, index) => (
+        <motion.div
+          key={item.name}
+          className="tech-item"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{ scale: 1.1, y: -5, color: "var(--accent-light)" }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ duration: 0.4, delay: index * 0.05 }}
+          viewport={{ once: true }}
+        >
+          {item.icon}
+          <span>{item.name}</span>
+        </motion.div>
+      ))}
+    </div>
   );
 }
 

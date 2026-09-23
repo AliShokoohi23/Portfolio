@@ -1,39 +1,32 @@
-import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
 
 function AboutCard() {
   return (
-    <Card className="quote-card-view">
-      <Card.Body>
-        <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Ali Shokoohi </span>
-            from <span className="purple"> Tehran, Iran.</span>
-            <br />
-            I am currently computer engineering student at Iran University of Science and Technology.
-            <br />
-            <br />
-            Apart from coding, some other activities that I love to do!
-          </p>
-          <ul>
-            <li className="about-activity">
-              <ImPointRight /> Playing Games
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Listening Music
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Travelling
-            </li>
-          </ul>
-{/* 
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
-          </p>
-          <footer className="blockquote-footer">Soumyajit</footer> */}
-        </blockquote>
-      </Card.Body>
-    </Card>
+    <div className="about-card">
+      <p>
+        Hi Everyone, I am <span className="highlight">Ali Shokoohi</span> from{" "}
+        <span className="highlight">Tehran, Iran</span>.
+      </p>
+      <p>
+        I am a Computer Engineering student at{" "}
+        <span className="highlight">Iran University of Science and Technology</span>.
+        My journey in software development has taken me through full-stack web apps,
+        cross-platform mobile development, machine learning, and cybersecurity.
+      </p>
+      <p>
+        I've worked as a Software Developer at Megamouj-e Iranian building C# applications,
+        and served as a Teaching Assistant for the Data Communication course.
+      </p>
+
+      <div className="about-activities">
+        <h4>Apart from coding, I enjoy:</h4>
+        <ul>
+          <li><ImPointRight /> Playing Games</li>
+          <li><ImPointRight /> Listening to Music</li>
+          <li><ImPointRight /> Travelling</li>
+        </ul>
+      </div>
+    </div>
   );
 }
 

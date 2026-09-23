@@ -1,52 +1,50 @@
-import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
+import Github from "./Github";
+import { motion } from "framer-motion";
 
 function About() {
   return (
-    <Container fluid className="about-section">
+    <div className="page-section" style={{ position: "relative" }}>
       <Particle />
-      <Container>
-        <Row style={{ justifyContent: "center", padding: "10px" }}>
-          <Col
-            md={7}
-            style={{
-              justifyContent: "center",
-              paddingTop: "30px",
-              paddingBottom: "50px",
-            }}
-          >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know Who <strong className="purple">I'M</strong>
-            </h1>
-            <Aboutcard />
-          </Col>
-          <Col
-            md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
-            className="about-img"
-          >
-            <img src={laptopImg} alt="about" className="img-fluid" />
-          </Col>
-        </Row>
-        <h1 className="project-heading">
-          Professional <strong className="purple">Skillset </strong>
-        </h1>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="section-header">
+          <p className="section-label">About Me</p>
+          <h1 className="section-title">Know Who I Am</h1>
+          <p className="section-subtitle">
+            A passionate developer focused on building impactful software.
+          </p>
+        </div>
 
+        <div className="about-intro-grid">
+          <Aboutcard />
+          <div className="about-img-wrapper">
+            <img src={laptopImg} alt="about" />
+          </div>
+        </div>
+
+        <div className="section-header">
+          <p className="section-label">Technologies</p>
+          <h2 className="section-title">Professional Skillset</h2>
+        </div>
         <Techstack />
 
-        <h1 className="project-heading">
-          <strong className="purple">Tools</strong> I use
-        </h1>
+        <div className="section-header">
+          <p className="section-label">Tools</p>
+          <h2 className="section-title">Tools I Use</h2>
+        </div>
         <Toolstack />
 
         <Github />
-      </Container>
-    </Container>
+      </motion.div>
+    </div>
   );
 }
 
