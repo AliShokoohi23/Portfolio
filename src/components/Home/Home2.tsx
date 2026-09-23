@@ -1,101 +1,67 @@
-import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
-import Tilt from "react-parallax-tilt";
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 import { Parallax } from "react-scroll-parallax";
 
 function Home2() {
   return (
-    <Container fluid className="home-about-section" id="about">
-      <Container>
-        <Row>
-          <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
-            </h1>
-            <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
-              <br />
-              <br />I am fluent in classics like
-              <i>
-                <b className="purple"> Python, C# and Javascript. </b>
-              </i>
-              <br />
-              <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="purple">Artificial Intelligence.</b>
-              </i>
-              <br />
-              <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">.NET Core, React.js and Python </b>
-            </p>
-          </Col>
-          <Col md={4} className="myAvtar">
-            <Parallax translateY={[-10, 10]}>
-              <Tilt>
-                <img src={myImg} className="img-fluid" alt="avatar" />
-              </Tilt>
-            </Parallax>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
-            <p>
-              Feel free to <span className="purple">connect </span>with me
-            </p>
-            <ul className="home-about-social-links">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/alishokoohi23"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              {/* <li className="social-icons">
-                <a
-                  href="https://twitter.com/Soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li> */}
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/ali-shokoohi-54a5182b7/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.instagram.com/ali_.shokoohi"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <AiFillInstagram />
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
-    </Container>
+    <div className="introduce-section">
+      <div className="introduce-inner">
+        <motion.div
+          className="introduce-text"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <h2>
+            Let Me <span>Introduce</span> Myself
+          </h2>
+          <p>
+            I fell in love with programming and I have at least learnt
+            something, I think… 🤷‍♂️
+          </p>
+          <p>
+            I am fluent in <span className="highlight">Python, C#, and JavaScript/TypeScript</span>.
+            My interests span building modern <span className="highlight">Web Technologies & Products</span> and
+            exploring <span className="highlight">Artificial Intelligence</span>.
+          </p>
+          <p>
+            Whenever possible, I also apply my passion for developing products
+            with <span className="highlight">.NET Core, React.js, Flutter, and Python</span>.
+          </p>
+
+          <div className="socials-row">
+            <a href="https://github.com/alishokoohi23" target="_blank" rel="noreferrer">
+              <AiFillGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/ali-shokoohi-54a5182b7/" target="_blank" rel="noreferrer">
+              <FaLinkedinIn />
+            </a>
+            <a href="https://www.instagram.com/ali_.shokoohi" target="_blank" rel="noreferrer">
+              <AiFillInstagram />
+            </a>
+          </div>
+        </motion.div>
+
+        <Parallax speed={5}>
+          <motion.div
+            className="introduce-avatar"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} glareEnable glareMaxOpacity={0.1}>
+              <img src={myImg} alt="avatar" />
+            </Tilt>
+          </motion.div>
+        </Parallax>
+      </div>
+    </div>
   );
 }
+
 export default Home2;
